@@ -9,6 +9,8 @@ redirect_from:
 
 I am currently a first year graduate student studying MSE in Robotics Engineering at the Worcester Polytechnic Institute. My research interests lie in the intersection of Robot Control and Reinforcement Learning and their applications in Robot Locomotion and other systems such as Robot Manipulators and Humanoids. Prior to this, I also worked as a Research Assistant at the Robotics Research Centre at the International Institute of Information Technology Hyderabad, under the guidance of Dr. Nagamanikandan Govindan. I received my Bachelor of Engineering in Mechanical Engineering from Birla Institute of Technology and Science Pilani - Hyderabad (BITS Hyderabad) in 2024. 
 
+These are a few [Projects](https://hitesh-vs.github.io/portfolio/) in different fields of robotics that I have worked on. 
+
 Resources
 ======
 Like many other Jekyll-based GitHub Pages templates, Academic Pages makes you separate the website's content from its form. The content & metadata of your website are in structured markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
