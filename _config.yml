@@ -21,7 +21,7 @@ repository               : "academicpages/academicpages.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "Main Pic.png"
   name             : "V Sai Hitesh"
   pronouns         : # example: "she/her"  
   bio              : "Robotics Graduate Student at WPI"
