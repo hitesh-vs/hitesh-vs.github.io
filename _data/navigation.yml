@@ -10,7 +10,7 @@ main:
     url: /teaching/    #Put research experience in this folder
     
   - title: "Projects"
-    url: /portfolio/
+    url: /portfolio/ #Put projects in this folder
         
   - title: "Blog Posts"
     url: /year-archive/
