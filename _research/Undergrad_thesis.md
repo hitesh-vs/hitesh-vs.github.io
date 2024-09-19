@@ -28,7 +28,7 @@ Simulation Setup
 The trajectories generated were verified through the physics simulator Gazebo to verify and correct the parameters in the problem setup. Initial simulation of the beer can on the flat plate end effector was done to estime the physical parameters like the friction coefficient between the object and the plate. The simulation showed that the trajectory adhered to the balancing constraints and the friction was estimated accurately.
 
 
-Results
+Hardware
 ======
 ![ExampleImage]({{ 'images/hardware.png' | relative_url }})
 
