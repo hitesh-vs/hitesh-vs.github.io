@@ -10,7 +10,7 @@ location: "Hyderabad, India"
 
 Generated Jerk optimised trajectories for the xarm7 manipulator using Optimal Control for the Non-Prehensile manipulation task of transporting objects using a flat plate end-effctor.
 
-![ExampleImage]({{ 'images/example.jpg' | relative_url }})
+![ExampleImage]({{ 'images/manipulator motion.png' | relative_url }})
 
 
 During my Bachelor Thesis, I had the opportunity to explore the concepts of Optimal Coontrol and Trajectory Optimisation specifically in the case of Robot manipulators. This [report]() explains the assumptions and the evaluation of the work
