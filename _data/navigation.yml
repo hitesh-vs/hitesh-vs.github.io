@@ -7,7 +7,7 @@ main:
     #url: /talks/    
 
   - title: "Research"
-    url: /teaching/    #Put research experience in this folder
+    url: /research/    #Put research experience in this folder
     
   - title: "Projects"
     url: /portfolio/ #Put projects in this folder
