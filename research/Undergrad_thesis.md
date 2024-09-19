@@ -1,6 +1,6 @@
 ---
 title: "Trajectory Optimisation for Non-Prehensile Manipulation"
-collection: Research
+collection: research
 type: "Undergraduate Thesis"
 permalink: /research/Undergrad_thesis
 venue: "Robotics Research Centre, IIIT Hyderabad"
