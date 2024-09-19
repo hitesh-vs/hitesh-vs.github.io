@@ -19,7 +19,7 @@ I received my **Bachelors in Mechanical Engineering** from [Birla Institute of T
 
 Apart from robots, I'm also a fan of Cricket, Football, Minecraft and Star Wars!
 
-You can connect with me on my [Linkedin](https://www.linkedin.com/in/sai-hitesh-viswasam-06b736204/) or through my [email](sviswasam@wpi.edu).
+You can connect with me on my [Linkedin](https://www.linkedin.com/in/sai-hitesh-viswasam-06b736204/) or through my [email](mailto:sviswasam@wpi.edu).
 
 <!-- News
 ======

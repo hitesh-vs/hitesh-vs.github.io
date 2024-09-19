@@ -8,7 +8,9 @@ date: Jul 2023 - Jan 2024
 location: "Hyderabad, India"
 ---
 
-This is a description of a teaching experience. You can use markdown like any other post.
+Generating Optimal Control trajectories for the Non-Prehensile manipulation task of transporting objects using a flat plate end-effctor.
+
+During my Bachelor Thesis, I had the opportunity to explore the concepts of Optimal Coontrol and Trajectory Optimisation specifically in the case of Robot manipulators.
 
 Heading 1
 ======
