@@ -2,7 +2,7 @@
 title: "Trajectory Optimisation for Non-Prehensile Manipulation"
 collection: Research Experiences
 type: "Undergraduate Thesis"
-permalink: /teaching/Undergrad_thesis
+permalink: /research/Undergrad_thesis
 venue: "Robotics Research Centre, IIIT Hyderabad"
 date: Jul 2023 - Jan 2024
 location: "Hyderabad, India"
