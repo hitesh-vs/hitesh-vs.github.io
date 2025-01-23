@@ -6,7 +6,7 @@ subtitle: Robotics Graduate Student @ WPI
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: main pic.png
   image_circular: true # crops the image to make it circular
   more_info: 
 
