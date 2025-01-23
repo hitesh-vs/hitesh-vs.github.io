@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Robotics Graduate Student @ WPI<br>Worcester, Massachusetts, 01609
+subtitle: Robotics Graduate Student @ WPI<br>Worcester, Massachusetts
 
 profile:
   align: right
