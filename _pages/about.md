@@ -2,11 +2,11 @@
 layout: about
 title: about
 permalink: /
-subtitle: Robotics Graduate Student @ WPI <br> Worcester, Massachusetts, 01609
+subtitle: Robotics Graduate Student @ WPI<br>Worcester, Massachusetts, 01609
 
 profile:
   align: right
-  image: main pic.png #Profile Pic
+  image: main_pic.png #Profile Pic
   image_circular: true # crops the image to make it circular
   more_info: 
 
