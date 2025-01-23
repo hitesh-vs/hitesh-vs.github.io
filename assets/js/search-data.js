@@ -499,7 +499,7 @@ ninja.data = [{
         title: 'LinkedIn',
         section: 'Socials',
         handler: () => {
-          window.open("https://www.linkedin.com/in/https://www.linkedin.com/in/sai-hitesh-viswasam-06b736204/", "_blank");
+          window.open("https://www.linkedin.com/in/sai-hitesh-viswasam-06b736204/", "_blank");
         },
       },{
       id: 'light-theme',
