@@ -2,7 +2,7 @@
 layout: page
 title: High to Low Level Task Planning and Execution using RL
 description: An RL framework for mobile manipulators to learn navigation and grasping tasks sequentially for Household tasks
-img: assets/img/Segmentation.png
+img: assets/img/SegmentationRLimg.jpg
 importance: 3
 category: Robot Control and RL
 ---
