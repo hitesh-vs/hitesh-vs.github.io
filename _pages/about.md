@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 subtitle: Robotics Graduate Student @ WPI<br>Worcester, Massachusetts
 

@@ -1,8 +1,8 @@
 ---
 layout: page
 permalink: /teaching/
-title: teaching
-description: Materials for courses you taught. Replace this text with your description.
+title: Research
+description: Documentation of research I performed as a graduate and an undergradute student. 
 nav: true
 nav_order: 6
 ---
