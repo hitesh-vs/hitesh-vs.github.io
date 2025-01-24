@@ -1,8 +1,8 @@
 ---
 layout: page
-title: project 4
-description: another without an image
-img:
+title: High to Low Level Task Planning and Execution using RL
+description: An RL framework for mobile manipulators to learn navigation and grasping tasks sequentially for Household tasks
+img: assets/img/Segmentation.png
 importance: 3
 category: Robot Control and RL
 ---
