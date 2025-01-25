@@ -3,7 +3,7 @@ layout: page
 title: project 7
 description: with background image
 img: assets/img/4.jpg
-importance: 4
+importance: 2
 category: Deep Learning and Computer Vision
 related_publications: true
 ---

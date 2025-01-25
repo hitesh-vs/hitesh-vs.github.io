@@ -4,9 +4,9 @@ title: Diffusion Models for Image Data Generation
 description: An application of Denoising Diffusion Probabilistic Models (DDPM) to generate high-quality synthetic training data
 for an image classifier using the CIFAR-10 dataset.
 img: assets/img/12.jpg
-importance: 1
+importance: 2
 category: Deep Learning and Computer Vision
-related_publications: true
+#related_publications: true
 ---
 
 Every project has a beautiful feature showcase page.
