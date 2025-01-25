@@ -24,6 +24,7 @@ The specific problem we aim to solve through this project is for a **mobile mani
     Visualisation of the entire pipeline of task planning and execution in Unity MLAgents environment. Here the orange boxes are obstacles and the green cylinder is the trash. The green cube at the end is the final location of the trash can to which the robot needs to navigate.
 </div>
 
+
 ## Enhancing Navigation using Curriculum Learning
 
 Our initial navigation task trained the robot in a large room using a sparse reward function (+1 for reaching the target, -1 for collisions). This led to suboptimal behavior, such as avoiding movement to escape penalties. Switching to a dense reward function improved training but failed to generalize due to the environment's complexity.
@@ -32,13 +33,13 @@ To address this, we implemented Curriculum Learning, starting with a simple envi
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/nav Pic.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/NavPic.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/Random Pic.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/RandomPic.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/Obs Pic.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/ObsPic.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -47,58 +48,25 @@ To address this, we implemented Curriculum Learning, starting with a simple envi
 
 In the simple setup, the agent achieved an average reward of 0.997 after 140,000 episodes. This structured training approach enabled better navigation in complex environments with obstacles.
 
+
 ## Improving the Pick Task with Curiosity-Driven Learning
 
 A 2-DOF manipulator was trained to touch a target on a tabletop. Initial training with sparse rewards (+1 for success) failed due to the large state space and lack of feedback. Reward shaping was introduced, penalizing collisions and rewarding proximity, improving learning but yielding suboptimal policies.
 
 To address this, the Intrinsic Curiosity Module (ICM) was added, encouraging exploration by providing rewards for discovering unexplored states. This curiosity-driven approach helped the agent refine its policy and achieve more efficient task performance.
 
+
 ## Approaches for Task Planning
 
 Three approaches were explored for robot task planning:
 
-Task Planning using LLMs: Train large language models (LLMs) to break down high-level commands into actionable robot sequences (e.g., Plan-Seq-Learn, SayCan).
+* Task Planning using LLMs: Train large language models (LLMs) to break down high-level commands into actionable robot sequences (e.g., Plan-Seq-Learn, SayCan).
 
-Using Behavior Trees: Employ a framework to decide when to switch actions and determine required actions for low-level task execution.
+* Using Behavior Trees: Employ a framework to decide when to switch actions and determine required actions for low-level task execution.
 
-Using Hierarchical RL: Use a high-level policy to sequence subgoals and a low-level policy to learn individual subtasks.
+* Using Hierarchical RL: Use a high-level policy to sequence subgoals and a low-level policy to learn individual subtasks.
 
 A combination of Hierarchical RL and Behavior Trees was used to enable sequential task execution, ensuring smooth transitions and successful task completion.
 
 The complete implementation of the above phases and the results we obtained are depicted in this presentation : [Link](https://rltaskplanner.my.canva.site/plan)
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
-
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
-
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-{% raw %}
-
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
-
-{% endraw %}

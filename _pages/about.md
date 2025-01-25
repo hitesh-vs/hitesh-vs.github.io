@@ -27,7 +27,7 @@ Hello There! I am Hitesh, currently a first year graduate student studying **MS 
 
 Specifically, my research interests lie in the intersection of **Robot Control**, **Artificial Intelligence** and **Robot Perception** and their applications in Robot Locomotion and other systems such as Robot Manipulators and Humanoids. One cool application of Robot Control is **Trajectory Optimisation** and my work as a Research Intern on this topic can be found [here](https://hitesh-vs.github.io/research/).
 
-These are a few other [Projects](https://hitesh-vs.github.io/portfolio/) from different fields of robotics that I have worked on.
+These are a few other [Projects](https://hitesh-vs.github.io/projects/) from different fields of robotics that I have worked on.
 
 I received my **Bachelors in Mechanical Engineering** from [Birla Institute of Technology and Science Pilani - Hyderabad (BITS Hyderabad), India](https://www.bits-pilani.ac.in/hyderabad/) in July 2024.  
 
