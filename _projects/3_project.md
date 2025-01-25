@@ -1,9 +1,9 @@
 ---
 layout: page
-title: project 3 with very long name
-description: a project that redirects to another website
+title: Semantic and Instance Segmentation of Aerial Drone Imagery
+description: A custom CNN model inspired by ResNet-18 that can perform Semantics on footage obtained from drones.
 img: assets/img/7.jpg
-redirect: https://unsplash.com
+#redirect: https://unsplash.com
 importance: 3
 category: Deep Learning and Computer Vision
 ---

@@ -1,8 +1,8 @@
 ---
 layout: page
-title: project 5
-description: a project with a background image
-img: assets/img/1.jpg
+title:  Quadrotor Control and Trajectory Optimization
+description: Tracking complex trajectories of Quadrotors using PID and optimal controllers like LQR and MPC
+img: assets/img/quadrotor.jpg
 importance: 3
 category: Robot Control and RL
 ---
