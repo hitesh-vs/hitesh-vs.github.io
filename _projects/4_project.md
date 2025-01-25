@@ -2,46 +2,29 @@
 layout: page
 title: High to Low Level Task Planning and Execution using RL
 description: An RL framework for mobile manipulators to learn navigation and grasping tasks sequentially for Household tasks
-img: assets/img/RLimg.jpg
+img: assets/img/RLimage.png
 importance: 3
 category: Robot Control and RL
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+This project presents a framework for mobile manipulators using Hierarchical Reinforcement Learning (HRL) and Reward Shaping to tackle complex tasks efficiently. Intrinsic Curiosity fosters self-driven exploration, while Unity ML Agents enable a proof-of-concept for navigation and object manipulation in unknown environments. Future work aims to integrate large language models (LLMs) for task decomposition and enhanced automation.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+The specific problem we aim to solve through this project is for a **mobile manipulator to learn to solve the problem of cleaning a table in a room autonomously**. For this purpose, the robot first needs to navigate to the location of the table in the room, then pick up the trash on the table and then navigate to the location of the trash can. We carried out the implementation in three phases:
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+1. Starting from the low level tasks, we created an RL agent to learn to navigate to a target location avoiding obstacles
+2. After Reaching the location, another agent is created to learn to pick the trash
+3. Once the agents for navigation and picking have learnt the optimal policies, they are integrated through the concepts of Heirarchical RL.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/RLimg.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
     This image can also have a caption. It's like magic.
 </div>
+
+The complete implementation of the above phases and the results we obtained are depicted in this presentation : [Link](https://rltaskplanner.my.canva.site/plan)
 
 You can also put regular text between your rows of images.
 Say you wanted to write a little bit about your project before you posted the rest of the images.
