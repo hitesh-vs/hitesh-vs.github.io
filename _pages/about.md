@@ -23,7 +23,7 @@ Link to your social media connections, too. This theme is set up to use [Font Aw
 
 Hello There! I am Hitesh, currently a first year graduate student studying **MS in Robotics Engineering** at the [Worcester Polytechnic Institute](https://www.wpi.edu/). 
 
-🤖Robots are interesting, aren't they? I’m truly fascinated by how even the simplest tasks of perception and control in robots stem from incredible engineering innovations and they are only getting better! I’m eager to delve deeper into these captivating fields for multiple real-world applications. 
+🤖Robots are interesting, aren't they? I’m truly fascinated by how even the simplest tasks of perception and control in robots stem from incredible engineering innovations and they are only getting better! I’m eager to delve deeper into these captivating fields for multiple real-world applications.
 
 Specifically, my research interests lie in the intersection of **Robot Control**, **Artificial Intelligence** and **Robot Perception** and their applications in Robot Locomotion and other systems such as Robot Manipulators and Humanoids. One cool application of Robot Control is **Trajectory Optimisation** and my work as a Research Intern on this topic can be found [here](https://hitesh-vs.github.io/research/).
 
