@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /teaching/
+permalink: /research/
 title: Research
 description: Documentation of research I performed as a graduate and an undergradute student. 
 nav: true
