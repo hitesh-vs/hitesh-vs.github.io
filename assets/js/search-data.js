@@ -21,7 +21,7 @@ ninja.data = [{
           description: "Documentation of research I performed as a graduate and an undergradute student.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/teaching/";
+            window.location.href = "/research/";
           },
         },{id: "post-a-post-with-image-galleries",
       
@@ -411,6 +411,11 @@ ninja.data = [{
           description: "Tracking complex trajectories of Quadrotors using PID and optimal controllers like LQR and MPC",
           section: "Projects",handler: () => {
               window.location.href = "/projects/5_project/";
+            },},{id: "research-trajectory-optimisation",
+          title: 'Trajectory Optimisation',
+          description: "An application of Denoising Diffusion Probabilistic Models (DDPM) to generate high-quality synthetic training data for an image classifier using the CIFAR-10 dataset.",
+          section: "Research",handler: () => {
+              window.location.href = "/research/1_research/";
             },},{
         id: 'social-email',
         title: 'email',
