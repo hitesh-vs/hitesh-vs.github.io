@@ -411,9 +411,9 @@ ninja.data = [{
           description: "Tracking complex trajectories of Quadrotors using PID and optimal controllers like LQR and MPC",
           section: "Projects",handler: () => {
               window.location.href = "/projects/5_project/";
-            },},{id: "research-trajectory-optimisation",
-          title: 'Trajectory Optimisation',
-          description: "An application of Denoising Diffusion Probabilistic Models (DDPM) to generate high-quality synthetic training data for an image classifier using the CIFAR-10 dataset.",
+            },},{id: "research-trajectory-optimisation-for-non-prehensile-manipulation",
+          title: 'Trajectory Optimisation for Non-Prehensile Manipulation',
+          description: "Generated Jerk optimised trajectories for the xarm7 manipulator using Optimal Control for the Non-Prehensile manipulation task of transporting objects using a flat plate end-effctor.",
           section: "Research",handler: () => {
               window.location.href = "/research/1_research/";
             },},{
