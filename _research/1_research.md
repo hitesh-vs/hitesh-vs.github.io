@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Trajectory Optimisation
-description: An application of Denoising Diffusion Probabilistic Models (DDPM) to generate high-quality synthetic training data for an image classifier using the CIFAR-10 dataset.
-img: assets/img/DDPM.png
+title: Trajectory Optimisation for Non-Prehensile Manipulation
+description: Generated Jerk optimised trajectories for the xarm7 manipulator using Optimal Control for the Non-Prehensile manipulation task of transporting objects using a flat plate end-effctor.
+img: assets/img/manipulator motion.png
 importance: 2
 category: Deep Learning and Computer Vision
 #related_publications: true
