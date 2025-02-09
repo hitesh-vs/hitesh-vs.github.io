@@ -411,6 +411,11 @@ ninja.data = [{
           description: "Tracking complex trajectories of Quadrotors using PID and optimal controllers like LQR and MPC",
           section: "Projects",handler: () => {
               window.location.href = "/projects/5_project/";
+            },},{id: "projects-navigation-of-a-differential-drive-robot-with-lidar-based-ekf-slam",
+          title: 'Navigation of a Differential Drive Robot with LIDAR based EKF SLAM',
+          description: "A short implementation of EKF SLAM for a robot to navigate in a maze like environment",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/6_project/";
             },},{id: "research-trajectory-optimisation-for-non-prehensile-manipulation",
           title: 'Trajectory Optimisation for Non-Prehensile Manipulation',
           description: "Generated Jerk optimised trajectories for the xarm7 manipulator using Optimal Control for the Non-Prehensile manipulation task of transporting objects using a flat plate end-effctor.",
