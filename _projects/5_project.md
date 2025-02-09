@@ -7,7 +7,9 @@ importance: 3
 category: Robot Control and RL
 ---
 
-This project focuses on developing a controller for a quadrotor tasked with navigating restricted airspace while following a target position or trajectory. The quadrotor system consists of a frame with four propellers that generate lift and moments about the center of mass, allowing for precise position and orientation control. [GitHub Repo](https://github.com/hitesh-vs/Quadrotor-PID-Control)
+This project focuses on developing a controller for a quadrotor tasked with navigating restricted airspace while following a target position or trajectory. The quadrotor system consists of a frame with four propellers that generate lift and moments about the center of mass, allowing for precise position and orientation control. 
+
+Github Link to the Project - [GitHub Repo](https://github.com/hitesh-vs/Quadrotor-PID-Control)
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -37,6 +39,15 @@ The results of tracking using the PD controller are as follows. The Mean Square 
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/PD result path.png" title="example image" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+     Tracking the Diamond and Circle Trajectories using PD controller
+</div>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/pd graph dia.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
@@ -44,6 +55,32 @@ The results of tracking using the PD controller are as follows. The Mean Square 
     </div>
 </div>
 <div class="caption">
-    Tracking Performance of the PD controller for both the trajectories.
+    Tracking Performance of the PD controller for the diamond trajectory (Left) and the circle trajectory (Right)
 </div>
 
+## LQR Controller
+
+To implement the LQR, we first convert the system dynamics into a control affine form, after which the optimal control problem can be defined and solved. Similar to the PD controller, the LQR controller could track the trajectories effectively and the results are as follows:
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/traj lq.png" title="example image" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+     Tracking the Diamond and Circle Trajectories using LQR controller
+</div>
+
+In the case fo the LQR controller, the Mean Square Error of the trajectories tracked are $0.035m^2$ and $0.064m^2$ for the diamond and the circle trajectories respectively.
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/dia lq graph.png" title="example image" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/circle lq graph.png" title="example image" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Tracking Performance of the LQR controller for the diamond trajectory (Left) and the circle trajectory (Right)
+</div>
