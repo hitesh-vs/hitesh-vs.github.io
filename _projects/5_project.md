@@ -4,7 +4,7 @@ title:  Quadrotor Control and Trajectory Optimization
 description: Tracking complex trajectories of Quadrotors using PID and optimal controllers like LQR and MPC
 img: assets/img/quadrotor.jpg
 importance: 3
-category: Robot Control and RL
+category: Robot Control and Navigation
 ---
 
 This project focuses on developing a controller for a quadrotor tasked with navigating restricted airspace while following a target position or trajectory. The quadrotor system consists of a frame with four propellers that generate lift and moments about the center of mass, allowing for precise position and orientation control. 

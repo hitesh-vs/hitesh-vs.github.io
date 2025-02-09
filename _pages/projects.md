@@ -5,7 +5,7 @@ permalink: /projects/
 description: 
 nav: true
 nav_order: 2
-display_categories: [Deep Learning and Computer Vision, Robot Control and RL]
+display_categories: [Deep Learning and Computer Vision, Robot Control and Navigation]
 horizontal: false
 ---
 
