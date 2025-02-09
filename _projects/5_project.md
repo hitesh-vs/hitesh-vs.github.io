@@ -18,8 +18,11 @@ This project focuses on developing a controller for a quadrotor tasked with navi
     Quadrotor navigating in the airspace following a target position/trajectory
 </div>
 
-The state of the system is defined by its position, velocity, and orientation (roll, pitch, yaw), with dynamics described using Newton-Euler equations as mentioned [here](https://ieeexplore.ieee.org/document/5569026). The objective of the controllers that are implemented is to follow two predefined trajectories in the 3D airspace, a diamond and a circular trajectory.
+The state of the system is defined by its position, velocity, and orientation (roll, pitch, yaw), with dynamics described using Newton-Euler equations as mentioned [here](https://ieeexplore.ieee.org/document/5569026). The objective of the controllers that are implemented is to follow two predefined trajectories in the 3D airspace, a diamond and a circular trajectory. Given the dynamics, the trajectories are tracked using two different controllers, the PID controller and an optimal controller (LQR), which are further explained next.
 
+## PID Controller
+
+To implement the PD controller, the property of **differential flatness** of the quadrotor system is used so as to make the control of the system easier. Through this property, we observe that even though the system has 12 state variables, we can simplify the control by only controlling the flat outputs of the system, which are given by $[x,y,z,\phi]$
 
 
 
