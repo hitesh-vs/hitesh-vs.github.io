@@ -4,7 +4,7 @@ title: Navigation of a Differential Drive Robot with LIDAR based EKF SLAM
 description: A short implementation of EKF SLAM for a robot to navigate in a maze like environment
 img: assets/img/ekfslam.jpg
 #redirect: https://unsplash.com
-importance: 2
+importance: 3
 category: Robot Control and Navigation
 ---
 
