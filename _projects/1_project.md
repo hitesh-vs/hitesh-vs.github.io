@@ -8,6 +8,8 @@ category: Deep Learning and Computer Vision
 #related_publications: true
 ---
 
+Github Link to the project - [Link](https://github.com/hitesh-vs/Diffusion-DDPM)
+
 In the age of Deep Learning, there is a huge need for data collection for efficiently training these models. but collecting high-quality datasets is often expensive, time-consuming, or even impractical. Synthetic data generation offers a solution to this problem—creating realistic, artificial data to train models effectively.
 
 <div class="row">
@@ -47,15 +49,32 @@ Diffusion Models work by **adding noise** to an image step by step until it beco
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/Cat explain.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
-</div>
-<div class="caption">
-    Visual description of the Diffusion Process
-</div>
+    </div>
+    <div class="caption">
+        Visual description of the Diffusion Process
+    </div>
 
 ## Results 
 
-- Some artificial images generated
-- Comparision of Validation accuracy of the classsifier before and after addition of diffusion images.
+From the above pipeline, images were generated for all 10 classes and the generated images are as follows.
 
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/diff_result.png" title="example image" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Generated Image data for all 10 classes in CIFAR-10 Dataset using DDPM with a cosine scheduler
+</div>
 
-Github Link to the project - [Link](https://github.com/hitesh-vs/Diffusion-DDPM)
+This is a plot of the performance of a very basic CNN classifier model before and after the data augmentation. The validation accuracy of the model improved from 54% to 57.12% after augmentation.
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/valacc.png" title="example image" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Validation Accuracy of the CNN Model before and after Data Augmentation
+</div>
+
