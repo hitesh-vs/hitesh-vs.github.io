@@ -34,7 +34,7 @@ Diffusion Models work by **adding noise** to an image step by step until it beco
    q(x_t \mid x_{t-1}) = \mathcal{N}(x_t; \sqrt{1 - \beta_t} x_{t-1}, \beta_t I)
    $$  
 
-   where \( \beta_t \) is a small noise variance.  
+   where $$\beta_t$$ is a small noise variance.  
 
 2. **Reverse Process (Denoising):**  
    A neural network learns to predict and remove this noise to reconstruct the original image:  
@@ -43,16 +43,16 @@ Diffusion Models work by **adding noise** to an image step by step until it beco
    p(x_{t-1} \mid x_t) = \mathcal{N}(x_{t-1}; \mu_\theta(x_t, t), \sigma_t^2 I)
    $$  
 
-   where \( \mu_\theta \) is the learned mean function.  
+   where $$\mu_\theta$$ is the learned mean function.  
 
    <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/Cat explain.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
-    </div>
-    <div class="caption">
+   </div>
+   <div class="caption">
         Visual description of the Diffusion Process
-    </div>
+   </div>
 
 ## Results 
 
