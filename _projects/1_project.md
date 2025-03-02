@@ -12,10 +12,7 @@ In the age of Deep Learning, there is a huge need for data collection for effici
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/Car1.png" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/Car2.png" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/datacollect.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -26,7 +23,34 @@ This project discusses the implementation of a particular method of generation o
 
 ## Principle behind Diffusion Models
 
-(Just a small and very brief 2 lines layman description of how the math works. I can add a pic too here if needed, guide me)
+Diffusion Models work by **adding noise** to an image step by step until it becomes pure randomness. Then, they learn to **reverse this process**, gradually reconstructing meaningful images from noise. Mathematically, this involves two key steps:  
+
+1. **Forward Process (Noise Addition):**  
+   A controlled amount of Gaussian noise is added at each step, following a Markov chain:  
+
+   $$
+   q(x_t \mid x_{t-1}) = \mathcal{N}(x_t; \sqrt{1 - \beta_t} x_{t-1}, \beta_t I)
+   $$  
+
+   where \( \beta_t \) is a small noise variance.  
+
+2. **Reverse Process (Denoising):**  
+   A neural network learns to predict and remove this noise to reconstruct the original image:  
+
+   $$
+   p(x_{t-1} \mid x_t) = \mathcal{N}(x_{t-1}; \mu_\theta(x_t, t), \sigma_t^2 I)
+   $$  
+
+   where \( \mu_\theta \) is the learned mean function.  
+
+   <div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/Cat explain.png" title="example image" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Visual description of the Diffusion Process
+</div>
 
 ## Results 
 
