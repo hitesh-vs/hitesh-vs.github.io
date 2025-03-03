@@ -64,13 +64,14 @@ Each generated image includes a **corresponding ground truth segmentation mask**
 
 To improve generalization, **data augmentation** techniques were applied:
 
-| Transformation | Example |
-|---------------|---------|
-| **Camera Angle Change** | ![Aug 1]("assets/img/camera tilt.png") |
-| **Background Variation** | ![Aug 2]("assets/img/bg change (2).png") |
-| **Lighting Change** | ![Aug 3]("assets/img/lighting change.png") |
-| **Noise & Blur** | ![Aug 4]("assets/img/image (2).png") |
-| **Color Transformation** | ![Aug 5](assets/img/clr_jitter.png) |
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/Aug.png" title="Patch Training Process" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Different Augmentations done to the generated data including Brightness shift, Camera Angle tilt, Color Jitter, etc.
+</div>
 
 Augmentations were implemented using **PyTorch's torchvision.transforms**.
 
