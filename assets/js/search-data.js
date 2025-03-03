@@ -386,7 +386,12 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-diffusion-models-for-image-data-generation",
+          section: "News",},{id: "projects-3d-scene-reconstruction-from-monocular-images-using-sfm",
+          title: '3D Scene Reconstruction from Monocular Images using SFM',
+          description: "A classical computer vision pipeline for 3D scene reconstruction using monocular images.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/0_project/";
+            },},{id: "projects-diffusion-models-for-image-data-generation",
           title: 'Diffusion Models for Image Data Generation',
           description: "An application of Denoising Diffusion Probabilistic Models (DDPM) to generate high-quality synthetic training data for an image classifier using the CIFAR-10 dataset.",
           section: "Projects",handler: () => {
