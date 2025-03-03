@@ -58,7 +58,7 @@ The pixel values of the patches are optimized through backpropagation until the 
 
 ---
 
-## 🖼️ Patch Application on Images
+## Patch Application on Images
 
 The trained adversarial patch is then applied to images, and its impact on depth estimation is evaluated.
 <div class="row">
@@ -76,7 +76,7 @@ The trained adversarial patch is then applied to images, and its impact on depth
 
 ---
 
-## 🌍 Real-World Testing
+## Real-World Testing
 
 To test the effectiveness of adversarial patches outside of controlled environments, we **printed** the patches and placed them near objects in real-world scenes.
 
@@ -93,7 +93,7 @@ Despite the additional errors due to the uneven camera motion, the patch success
 
 ---
 
-## ⚡ Attack Using Fast Gradient Sign Method (FGSM)
+## Attack Using Fast Gradient Sign Method (FGSM)
 
 Apart from adversarial patches, the **FGSM attack** was implemented to perturb input images adversarially.
 
