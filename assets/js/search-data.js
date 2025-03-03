@@ -421,11 +421,16 @@ ninja.data = [{
           description: "A short implementation of EKF SLAM for a robot to navigate in a maze like environment",
           section: "Projects",handler: () => {
               window.location.href = "/projects/7_project/";
+            },},{id: "research-dynamic-whole-body-push-recovery-of-humanoid-robots-while-walking",
+          title: 'Dynamic Whole Body Push Recovery of Humanoid Robots while Walking',
+          description: "Developing Strategies for Humanoid Robots to recover from push distrubances during walking phase while stepping, along with posture regulation.",
+          section: "Research",handler: () => {
+              window.location.href = "/research/1_research/";
             },},{id: "research-trajectory-optimisation-for-non-prehensile-manipulation",
           title: 'Trajectory Optimisation for Non-Prehensile Manipulation',
           description: "Generated Jerk optimised trajectories for the xarm7 manipulator using Optimal Control for the Non-Prehensile manipulation task of transporting objects using a flat plate end-effctor.",
           section: "Research",handler: () => {
-              window.location.href = "/research/1_research/";
+              window.location.href = "/research/2_research/";
             },},{
         id: 'social-email',
         title: 'email',
