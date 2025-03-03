@@ -66,11 +66,11 @@ To improve generalization, **data augmentation** techniques were applied:
 
 | Transformation | Example |
 |---------------|---------|
-| **Camera Angle Change** | ![Aug 1](assets/img/camera tilt.png) |
-| **Background Variation** | ![Aug 2](assets/img/bg change (2).png) |
-| **Lighting Change** | ![Aug 3](assets/img/lighting change.png) |
-| **Noise & Blur** | ![Aug 4](assets/img/image (2).png) |
-| **Color Transformation** | ![Aug 5](assets/img/clr jitter.png) |
+| **Camera Angle Change** | ![Aug 1]("assets/img/camera tilt.png") |
+| **Background Variation** | ![Aug 2]("assets/img/bg change (2).png") |
+| **Lighting Change** | ![Aug 3]("assets/img/lighting change.png") |
+| **Noise & Blur** | ![Aug 4]("assets/img/image (2).png") |
+| **Color Transformation** | ![Aug 5](assets/img/clr_jitter.png) |
 
 Augmentations were implemented using **PyTorch's torchvision.transforms**.
 
@@ -116,10 +116,14 @@ Instance segmentation aims to distinguish multiple **overlapping objects**. We u
 2. **Identify Connected Regions:** Assign unique labels to each cluster.
 3. **Use 4-connectivity or 8-connectivity** to group pixels into objects.
 
-| Semantic Segmentation | Instance Segmentation |
-|----------------------|----------------------|
-| ![Semantic](assets/img/semantic_mask.png) | ![Instance](assets/img/instance_mask.png) |
-
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/Segmentation Result.png" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Results of Semantic and Instance Segmentation.
+</div>
 ---
 
 ## Experiments & Results
@@ -135,7 +139,7 @@ Instance segmentation aims to distinguish multiple **overlapping objects**. We u
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/training_loss.png" title="Training & Validation Loss" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/loss_curve_1.png" title="Training & Validation Loss" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -151,8 +155,15 @@ Instance segmentation aims to distinguish multiple **overlapping objects**. We u
 2. **Small Windows on Dark Backgrounds**  
    - Objects with **low contrast** were harder to segment accurately.
 
-| Failure Case | Example |
-|-------------|---------|
-| **Dark Background Issue** | ![Fail 1](assets/img/fail_dark.png) |
-| **Tilted Window Issue** | ![Fail 2](assets/img/fail_tilt.png) |
+3. **Windows close to each other**
+   - Watershed segmentation fails when there is a significant overlap between the windows and it identifies it as a single entity.
 
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/fail.png" title="Training & Validation Loss" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Different Limiting cases of our approach.
+</div>
