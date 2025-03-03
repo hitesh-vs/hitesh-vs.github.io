@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 3D Scene Reconstruction from Monocular Images using SFM
-description: A classical computer vision pipeline for 3D scene reconstruction using monocular images.
+description: A classical computer vision pipeline for 3D scene reconstruction using the Structure from Motion (SfM) algorithm.
 img: assets/img/sfm_intro.jpg
 importance: 2
 category: Deep Learning and Computer Vision
@@ -13,7 +13,7 @@ This project reconstructs a 3D scene and estimates camera poses using a given se
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="images/flowchart.png" title="Pipeline Flowchart" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/flowchart.png" title="Pipeline Flowchart" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -54,7 +54,7 @@ This project reconstructs a 3D scene and estimates camera poses using a given se
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="images/Final sfm.png" title="Pipeline Flowchart" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/Final sfm.png" title="Pipeline Flowchart" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
