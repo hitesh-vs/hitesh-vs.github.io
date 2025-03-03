@@ -97,8 +97,8 @@ Despite the additional errors due to the uneven camera motion, the patch success
 
 Apart from adversarial patches, the **FGSM attack** was implemented to perturb input images adversarially.
 
-\[
-x_{adv} = x + \epsilon \cdot sign(\nabla_x L)
-\]
+$$ 
+x_{adv} = x + \epsilon \cdot sign(\nabla_x L) 
+$$
 
 This method provides a fast way to generate adversarial examples by maximizing the network’s error on a given input.

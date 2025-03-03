@@ -87,7 +87,7 @@ We trained a **U-Net-based model** with a **MobileNet encoder** for semantic seg
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/unet_architecture.png" title="U-Net Architecture" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/unet drawio.png" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -107,7 +107,7 @@ where:
 
 ---
 
-## 🔍 Instance Segmentation
+## Instance Segmentation
 
 Instance segmentation aims to distinguish multiple **overlapping objects**. We used the **Connected Components Algorithm** to assign unique labels to each object.
 
@@ -122,7 +122,7 @@ Instance segmentation aims to distinguish multiple **overlapping objects**. We u
 
 ---
 
-## 🏆 Experiments & Results
+## Experiments & Results
 
 ### **Training Hyperparameters**
 | Hyperparameter | Value |
