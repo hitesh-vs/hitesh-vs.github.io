@@ -1,72 +1,170 @@
 ---
 layout: page
-title: High to Low Level Task Planning and Execution using RL
-description: An RL framework for mobile manipulators to learn navigation and grasping tasks sequentially for Household tasks
-img: assets/img/RLimage.png
-importance: 3
-category: Robot Control and Navigation
+title: Semantic and Instance Segmentation of Aerial Drone Imagery
+description: A custom CNN model inspired by ResNet-18 that can perform Semantics on footage obtained from drones.
+img: assets/img/Segmentation.jpg
+#redirect: https://unsplash.com
+importance: 2
+category: Deep Learning and Computer Vision
 ---
 
-This project presents a framework for mobile manipulators using Hierarchical Reinforcement Learning (HRL) and Reward Shaping to tackle complex tasks efficiently. Intrinsic Curiosity fosters self-driven exploration, while Unity ML Agents enable a proof-of-concept for navigation and object manipulation in unknown environments. Future work aims to integrate large language models (LLMs) for task decomposition and enhanced automation.
+Github Link to the project - [Link](https://github.com/hitesh-vs/Semantic-and-Instance-Seg)
 
-The specific problem we aim to solve through this project is for a **mobile manipulator to learn to solve the problem of cleaning a table in a room autonomously**. For this purpose, the robot first needs to navigate to the location of the table in the room, then pick up the trash on the table and then navigate to the location of the trash can. We carried out the implementation in three phases:
-
-1. Starting from the low level tasks, we created an RL agent to learn to navigate to a target location avoiding obstacles
-2. After Reaching the location, another agent is created to learn to pick the trash
-3. Once the agents for navigation and picking have learnt the optimal policies, they are integrated through the concepts of Heirarchical RL.
+Accurate **Semantic and Instance segmentation** is critical for **autonomous drone navigation**, especially when maneuvering through obstacles like racing windows. Deep Learning models such as a simple U-Net can be trained for executing segmentation tasks. Further, models like Mask R-CNNs can be used for further tasks like Object detection and Instance Segmentation.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/RLimg.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/Segmentation.png" title="Synthetic Data Generation" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Visualisation of the entire pipeline of task planning and execution in Unity MLAgents environment. Here the orange boxes are obstacles and the green cylinder is the trash. The green cube at the end is the final location of the trash can to which the robot needs to navigate.
+    Using UNet and Connected Component Analysis, Semantic and Instance Segmentation were performed on drone racing windows.
 </div>
 
+---
 
-## Enhancing Navigation using Curriculum Learning
+## Project Overview
 
-Our initial navigation task trained the robot in a large room using a sparse reward function (+1 for reaching the target, -1 for collisions). This led to suboptimal behavior, such as avoiding movement to escape penalties. Switching to a dense reward function improved training but failed to generalize due to the environment's complexity.
+This project explores **Semantic and Instance segmentation** for **drone perception** tasks. It follows three key stages:
 
-To address this, we implemented Curriculum Learning, starting with a simple environment (fixed target, no obstacles) and gradually increasing difficulty. The agent, trained using PPO, leveraged prior models for each stage, ensuring steady progress.
+1. **Dataset Generation:**  
+   - Use **Blender** to create images with various lighting, backgrounds, and occlusions.
+   - Generate **segmentation masks** for training.  
+
+2. **Semantic Segmentation:**  
+   - Implement **U-Net with a MobileNet encoder** for object segmentation.
+
+3. **Instance Segmentation:**  
+   - Apply **connected component analysis** to distinguish multiple objects.
+
+---
+
+## Dataset Generation
+
+Since manually collecting data is impractical, we **generated** images using **Blender** with **domain randomization** to create realistic training data.
+
+- **Different Object Orientations**
+- **Lighting & Background Variations**
+- **Occlusion Handling**
+
+Each generated image includes a **corresponding ground truth segmentation mask** for training.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/NavPic.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/RandomPic.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/ObsPic.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/drone data gen.png" title="Synthetic Data Generation" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    The process of Curriculum Learning for the navigation task. The agent was first trained to navigate to a fixed target, then to a target with random locations and finally to navigate through the scene with obstacles.
+    Image of a scene generated along with its Ground truth segmentation mask, both of which are generated through Blender.
 </div>
 
-In the simple setup, the agent achieved an average reward of 0.997 after 140,000 episodes. This structured training approach enabled better navigation in complex environments with obstacles.
+---
+
+## Data Augmentation
+
+To improve generalization, **data augmentation** techniques were applied:
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/Aug.png" title="Patch Training Process" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Different Augmentations done to the generated data including Brightness shift, Camera Angle tilt, Color Jitter, etc.
+</div>
+
+Augmentations were implemented using **PyTorch's torchvision.transforms**.
+
+---
+
+## Semantic Segmentation Model
+
+We trained a **U-Net-based model** with a **MobileNet encoder** for semantic segmentation.
+
+### **Architecture Overview**
+- **Encoder:** Uses a ResNet-like structure with **convolutional layers** and **skip connections**.
+- **Decoder:** Upsamples features using **transposed convolutions**.
+- **Final Layer:** Produces a **binary segmentation mask**.
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/unet drawio.png" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    U-Net architecture used for semantic segmentation.
+</div>
+
+### **Loss Function**
+The **Binary Cross-Entropy (BCE) Loss** was used for pixel-wise classification:
+
+$$
+L_{BCE} = - \frac{1}{N} \sum_{i=1}^{N} [ y_i \log(p_i) + (1 - y_i) \log(1 - p_i) ]
+$$
+
+where:
+- **\(y_i\)** is the ground truth label (0 or 1).
+- **\(p_i\)** is the predicted probability.
+
+---
+
+## Instance Segmentation
+
+Instance segmentation aims to distinguish multiple **overlapping objects**. We used the **Connected Components Algorithm** to assign unique labels to each object.
+
+### **Algorithm Steps**
+1. **Input:** Binary segmentation mask.
+2. **Identify Connected Regions:** Assign unique labels to each cluster.
+3. **Use 4-connectivity or 8-connectivity** to group pixels into objects.
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/Segmentation Result.png" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Results of Semantic and Instance Segmentation.
+</div>
+---
+
+## Experiments & Results
+
+### **Training Hyperparameters**
+| Hyperparameter | Value |
+|---------------|------|
+| **Epochs** | 100 |
+| **Batch Size** | 32 |
+| **Total Images** | 40,000 |
+| **Learning Rate** | 1e-4 |
+| **Optimizer** | ADAM |
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/loss_curve_1.png" title="Training & Validation Loss" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Loss curve showing model convergence during training.
+</div>
+
+---
+
+### **Failure Cases**
+1. **Tilted Windows**  
+   - The model struggled to segment windows when **heavily tilted**, likely due to a **lack of diverse training data**.
+
+2. **Small Windows on Dark Backgrounds**  
+   - Objects with **low contrast** were harder to segment accurately.
+
+3. **Windows close to each other**
+   - Watershed segmentation fails when there is a significant overlap between the windows and it identifies it as a single entity.
 
 
-## Improving the Pick Task with Curiosity-Driven Learning
-
-A 2-DOF manipulator was trained to touch a target on a tabletop. Initial training with sparse rewards (+1 for success) failed due to the large state space and lack of feedback. Reward shaping was introduced, penalizing collisions and rewarding proximity, improving learning but yielding suboptimal policies.
-
-To address this, the Intrinsic Curiosity Module (ICM) was added, encouraging exploration by providing rewards for discovering unexplored states. This curiosity-driven approach helped the agent refine its policy and achieve more efficient task performance.
-
-
-## Approaches for Task Planning
-
-Three approaches were explored for robot task planning:
-
-* Task Planning using LLMs: Train large language models (LLMs) to break down high-level commands into actionable robot sequences (e.g., Plan-Seq-Learn, SayCan).
-
-* Using Behavior Trees: Employ a framework to decide when to switch actions and determine required actions for low-level task execution.
-
-* Using Hierarchical RL: Use a high-level policy to sequence subgoals and a low-level policy to learn individual subtasks.
-
-A combination of Hierarchical RL and Behavior Trees was used to enable sequential task execution, ensuring smooth transitions and successful task completion.
-
-The complete implementation of the above phases and the results we obtained are depicted in this presentation : [Link](https://rltaskplanner.my.canva.site/plan)
-
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/fail.png" title="Training & Validation Loss" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Different Limiting cases of our approach.
+</div>

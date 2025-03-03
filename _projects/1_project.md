@@ -1,80 +1,68 @@
 ---
 layout: page
-title: Diffusion Models for Image Data Generation
-description: An application of Denoising Diffusion Probabilistic Models (DDPM) to generate high-quality synthetic training data for an image classifier using the CIFAR-10 dataset.
-img: assets/img/diffusion.png
+title: 3D Scene Reconstruction from Monocular Images using SFM
+description: A classical computer vision pipeline for 3D scene reconstruction using monocular images.
+img: assets/img/sfm img.jpg
 importance: 2
-category: Deep Learning and Computer Vision
-#related_publications: true
+category: Computer Vision and 3D Reconstruction
 ---
 
-Github Link to the project - [Link](https://github.com/hitesh-vs/Diffusion-DDPM)
+Github Link to the project - [Link](https://github.com/hitesh-vs/StructurefromMotion)
 
-In the age of Deep Learning, there is a huge need for data collection for efficiently training these models. but collecting high-quality datasets is often expensive, time-consuming, or even impractical. Synthetic data generation offers a solution to this problem—creating realistic, artificial data to train models effectively.
-
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/datacollect.png" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Collecting real-world data can be risky—foggy conditions, rare and unpredictable events, like accidents, are difficult to capture in datasets but crucial for training AI models.
-</div>
-
-This project discusses the implementation of a particular method of generation of artifical data - namely Diffusion Models. The aim of this project is to use Diffusion Models to generate high-quality synthetic training data for an image classifier using the CIFAR-10 dataset.
-
-## Principle behind Diffusion Models
-
-Diffusion Models work by **adding noise** to an image step by step until it becomes pure randomness. Then, they learn to **reverse this process**, gradually reconstructing meaningful images from noise. Mathematically, this involves two key steps:  
-
-1. **Forward Process (Noise Addition):**  
-   A controlled amount of Gaussian noise is added at each step, following a Markov chain:  
-
-   $$
-   q(x_t \mid x_{t-1}) = \mathcal{N}(x_t; \sqrt{1 - \beta_t} x_{t-1}, \beta_t I)
-   $$  
-
-   where $$\beta_t$$ is a small noise variance.  
-
-2. **Reverse Process (Denoising):**  
-   A neural network learns to predict and remove this noise to reconstruct the original image:  
-
-   $$
-   p(x_{t-1} \mid x_t) = \mathcal{N}(x_{t-1}; \mu_\theta(x_t, t), \sigma_t^2 I)
-   $$  
-
-   where $$\mu_\theta$$ is the learned mean function.  
-
-   <div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/Cat explain.png" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-   </div>
-   <div class="caption">
-        Visual description of the Diffusion Process
-   </div>
-
-## Results 
-
-From the above pipeline, images were generated for all 10 classes and the generated images are as follows.
+This project reconstructs a 3D scene and estimates camera poses using a given set of six monocular images and their feature point correspondences. The pipeline involves feature detection, camera pose estimation, and 3D point triangulation.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/diff_result.png" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="images/flowchart.png" title="Pipeline Flowchart" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Generated Image data for all 10 classes in CIFAR-10 Dataset using DDPM with a cosine scheduler
+    Pipeline Flowchart showing the overall process of SfM.
 </div>
 
-This is a plot of the performance of a very basic CNN classifier model before and after the data augmentation. The validation accuracy of the model improved from 54% to 57.12% after augmentation.
+---
+
+## Pipeline
+
+1. **Feature Detection & Correspondences**  
+   - Extract keypoints and match features across images.
+
+2. **Fundamental & Essential Matrix Estimation**  
+   - Compute the fundamental matrix to remove outliers and the essential matrix to estimate relative camera poses.
+
+3. **Camera Pose Recovery**  
+   - Solve for possible camera poses and determine the correct one.
+
+4. **Linear Triangulation**  
+   - Estimate 3D points from matched feature correspondences.
+
+5. **Non-Linear Triangulation**  
+   - Refine 3D points using optimization techniques.
+
+6. **Pose Estimation (PnP & RANSAC)**  
+   - Use Perspective-n-Point (PnP) with RANSAC to estimate camera poses.
+
+7. **Bundle Adjustment**  
+   - Optimize camera parameters and 3D points for better accuracy.
+
+---
+
+## Output
+
+- **Sparse 3D Point Cloud**: A set of reconstructed 3D points representing the scene.
+- **Camera Poses**: Estimated positions and orientations of the cameras.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/valacc.png" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="images/Final sfm.png" title="Pipeline Flowchart" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Validation Accuracy of the CNN Model before and after Data Augmentation
+    Final 3D reconstruction of the Unity Hall Building at WPI using SfM (Top View)
 </div>
 
+---
+
+## References
+
+- [SciPy Cookbook - Bundle Adjustment](https://scipy-cookbook.readthedocs.io/items/bundle_adjustment.html)

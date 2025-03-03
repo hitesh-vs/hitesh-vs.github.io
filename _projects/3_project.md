@@ -1,170 +1,104 @@
 ---
 layout: page
-title: Semantic and Instance Segmentation of Aerial Drone Imagery
-description: A custom CNN model inspired by ResNet-18 that can perform Semantics on footage obtained from drones.
-img: assets/img/Segmentation.jpg
-#redirect: https://unsplash.com
+title: Adversarial Patch Generation for Monocular Depth Networks
+description: Customised implementation of this paper by Yamanaka et. al. to attack Depth networks with Adversarial patches. 
+img: assets/img/patch.jpg
 importance: 2
 category: Deep Learning and Computer Vision
+giscus_comments: false
 ---
 
-Github Link to the project - [Link](https://github.com/hitesh-vs/Semantic-and-Instance-Seg)
+Github Link to the project - [Link](https://github.com/hitesh-vs/Adversarial-Attack-on-Neural-Nets-)
 
-Accurate **Semantic and Instance segmentation** is critical for **autonomous drone navigation**, especially when maneuvering through obstacles like racing windows. Deep Learning models such as a simple U-Net can be trained for executing segmentation tasks. Further, models like Mask R-CNNs can be used for further tasks like Object detection and Instance Segmentation.
+Deep learning models, particularly neural networks for **monocular depth estimation**, are susceptible to adversarial attacks. This project explores how adversarial patches can manipulate depth perception by fooling a **Depth Estimator Neural Network** into estimating incorrect depths.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/Segmentation.png" title="Synthetic Data Generation" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/patch.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Using UNet and Connected Component Analysis, Semantic and Instance Segmentation were performed on drone racing windows.
+    The goal is to train a patch that manipulates a depth estimator's output, forcing it to perceive incorrect depths in a targeted manner.
 </div>
+
+## Methodology
+
+This project follows a structured approach to generate adversarial patches:
+
+1. **Patch Augmentation:** Randomly initialized patches undergo transformations to mimic real-world variations.
+2. **Patch Training:** Optimizing a loss function to **fool the depth estimator** into predicting incorrect depths.
+3. **Real-World Testing:** Printing patches and testing their effectiveness on real-world images.
 
 ---
 
-## Project Overview
+## Patch Training Process
 
-This project explores **Semantic and Instance segmentation** for **drone perception** tasks. It follows three key stages:
+Adversarial patches are trained using a loss function that consists of three major components:
 
-1. **Dataset Generation:**  
-   - Use **Blender** to create images with various lighting, backgrounds, and occlusions.
-   - Generate **segmentation masks** for training.  
+1. **Depth Loss**: Forces a specific depth perception in the patch region.
+2. **Non-Printability Score (NPS)**: Ensures printable colors.
+3. **Total Variation (TV) Loss**: Smooths the patch texture for real-world use.
 
-2. **Semantic Segmentation:**  
-   - Implement **U-Net with a MobileNet encoder** for object segmentation.
-
-3. **Instance Segmentation:**  
-   - Apply **connected component analysis** to distinguish multiple objects.
-
----
-
-## Dataset Generation
-
-Since manually collecting data is impractical, we **generated** images using **Blender** with **domain randomization** to create realistic training data.
-
-- **Different Object Orientations**
-- **Lighting & Background Variations**
-- **Occlusion Handling**
-
-Each generated image includes a **corresponding ground truth segmentation mask** for training.
-
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/drone data gen.png" title="Synthetic Data Generation" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Image of a scene generated along with its Ground truth segmentation mask, both of which are generated through Blender.
-</div>
-
----
-
-## Data Augmentation
-
-To improve generalization, **data augmentation** techniques were applied:
-
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/Aug.png" title="Patch Training Process" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Different Augmentations done to the generated data including Brightness shift, Camera Angle tilt, Color Jitter, etc.
-</div>
-
-Augmentations were implemented using **PyTorch's torchvision.transforms**.
-
----
-
-## Semantic Segmentation Model
-
-We trained a **U-Net-based model** with a **MobileNet encoder** for semantic segmentation.
-
-### **Architecture Overview**
-- **Encoder:** Uses a ResNet-like structure with **convolutional layers** and **skip connections**.
-- **Decoder:** Upsamples features using **transposed convolutions**.
-- **Final Layer:** Produces a **binary segmentation mask**.
-
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/unet drawio.png" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    U-Net architecture used for semantic segmentation.
-</div>
-
-### **Loss Function**
-The **Binary Cross-Entropy (BCE) Loss** was used for pixel-wise classification:
+Mathematically, this is represented as:
 
 $$
-L_{BCE} = - \frac{1}{N} \sum_{i=1}^{N} [ y_i \log(p_i) + (1 - y_i) \log(1 - p_i) ]
+L = L_{depth} + \alpha L_{NPS} + \beta L_{TV}
 $$
 
-where:
-- **\(y_i\)** is the ground truth label (0 or 1).
-- **\(p_i\)** is the predicted probability.
-
----
-
-## Instance Segmentation
-
-Instance segmentation aims to distinguish multiple **overlapping objects**. We used the **Connected Components Algorithm** to assign unique labels to each object.
-
-### **Algorithm Steps**
-1. **Input:** Binary segmentation mask.
-2. **Identify Connected Regions:** Assign unique labels to each cluster.
-3. **Use 4-connectivity or 8-connectivity** to group pixels into objects.
-
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/Segmentation Result.png" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/final patch.png" title="Patch Training Process" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Results of Semantic and Instance Segmentation.
+    Final patches obtanied after Training.
 </div>
----
 
-## Experiments & Results
-
-### **Training Hyperparameters**
-| Hyperparameter | Value |
-|---------------|------|
-| **Epochs** | 100 |
-| **Batch Size** | 32 |
-| **Total Images** | 40,000 |
-| **Learning Rate** | 1e-4 |
-| **Optimizer** | ADAM |
-
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/loss_curve_1.png" title="Training & Validation Loss" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Loss curve showing model convergence during training.
-</div>
+The pixel values of the patches are optimized through backpropagation until the optimal patch is found.
 
 ---
 
-### **Failure Cases**
-1. **Tilted Windows**  
-   - The model struggled to segment windows when **heavily tilted**, likely due to a **lack of diverse training data**.
+## Patch Application on Images
 
-2. **Small Windows on Dark Backgrounds**  
-   - Objects with **low contrast** were harder to segment accurately.
-
-3. **Windows close to each other**
-   - Watershed segmentation fails when there is a significant overlap between the windows and it identifies it as a single entity.
-
-
+The trained adversarial patch is then applied to images, and its impact on depth estimation is evaluated.
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/fail.png" title="Training & Validation Loss" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/10m.png" title="Patch Training Process" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/70m.png" title="Patch Training Process" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Different Limiting cases of our approach.
+    Results of the Depth Estimator Network for patches to mimic depths of 10m and 70m.
 </div>
+
+
+---
+
+## Real-World Testing
+
+To test the effectiveness of adversarial patches outside of controlled environments, we **printed** the patches and placed them near objects in real-world scenes.
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/Real Patch.png" title="Patch Training Process" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Real World Testing of the Obtained Patches.
+</div>
+
+Despite the additional errors due to the uneven camera motion, the patch successfully **altered depth predictions** for both the 10m and 70m distances.
+
+---
+
+## Attack Using Fast Gradient Sign Method (FGSM)
+
+Apart from adversarial patches, the **FGSM attack** was implemented to perturb input images adversarially.
+
+$$ 
+x_{adv} = x + \epsilon \cdot sign(\nabla_x L) 
+$$
+
+This method provides a fast way to generate adversarial examples by maximizing the network’s error on a given input.
