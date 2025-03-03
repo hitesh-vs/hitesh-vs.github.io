@@ -390,37 +390,37 @@ ninja.data = [{
           title: '3D Scene Reconstruction from Monocular Images using SFM',
           description: "A classical computer vision pipeline for 3D scene reconstruction using monocular images.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/0_project/";
+              window.location.href = "/projects/1_project/";
             },},{id: "projects-diffusion-models-for-image-data-generation",
           title: 'Diffusion Models for Image Data Generation',
           description: "An application of Denoising Diffusion Probabilistic Models (DDPM) to generate high-quality synthetic training data for an image classifier using the CIFAR-10 dataset.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/1_project/";
+              window.location.href = "/projects/2_project/";
             },},{id: "projects-adversarial-patch-generation-for-monocular-depth-networks",
           title: 'Adversarial Patch Generation for Monocular Depth Networks',
           description: "Customised implementation of this paper by Yamanaka et. al. to attack Depth networks with Adversarial patches.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/2_project/";
+              window.location.href = "/projects/3_project/";
             },},{id: "projects-semantic-and-instance-segmentation-of-aerial-drone-imagery",
           title: 'Semantic and Instance Segmentation of Aerial Drone Imagery',
           description: "A custom CNN model inspired by ResNet-18 that can perform Semantics on footage obtained from drones.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/3_project/";
+              window.location.href = "/projects/4_project/";
             },},{id: "projects-high-to-low-level-task-planning-and-execution-using-rl",
           title: 'High to Low Level Task Planning and Execution using RL',
           description: "An RL framework for mobile manipulators to learn navigation and grasping tasks sequentially for Household tasks",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/4_project/";
+              window.location.href = "/projects/5_project/";
             },},{id: "projects-quadrotor-control-and-trajectory-optimization",
           title: 'Quadrotor Control and Trajectory Optimization',
           description: "Tracking complex trajectories of Quadrotors using PID and optimal controllers like LQR and MPC",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/5_project/";
+              window.location.href = "/projects/6_project/";
             },},{id: "projects-navigation-of-a-differential-drive-robot-with-lidar-based-ekf-slam",
           title: 'Navigation of a Differential Drive Robot with LIDAR based EKF SLAM',
           description: "A short implementation of EKF SLAM for a robot to navigate in a maze like environment",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/6_project/";
+              window.location.href = "/projects/7_project/";
             },},{id: "research-trajectory-optimisation-for-non-prehensile-manipulation",
           title: 'Trajectory Optimisation for Non-Prehensile Manipulation',
           description: "Generated Jerk optimised trajectories for the xarm7 manipulator using Optimal Control for the Non-Prehensile manipulation task of transporting objects using a flat plate end-effctor.",
