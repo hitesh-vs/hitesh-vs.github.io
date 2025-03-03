@@ -388,7 +388,7 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "projects-3d-scene-reconstruction-from-monocular-images-using-sfm",
           title: '3D Scene Reconstruction from Monocular Images using SFM',
-          description: "A classical computer vision pipeline for 3D scene reconstruction using monocular images.",
+          description: "A classical computer vision pipeline for 3D scene reconstruction using the Structure from Motion (SfM) algorithm.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
             },},{id: "projects-diffusion-models-for-image-data-generation",
