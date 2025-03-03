@@ -2,9 +2,9 @@
 layout: page
 title: 3D Scene Reconstruction from Monocular Images using SFM
 description: A classical computer vision pipeline for 3D scene reconstruction using monocular images.
-img: assets/img/sfm img.jpg
+img: assets/img/sfm_img.jpg
 importance: 2
-category: Computer Vision and 3D Reconstruction
+category: Deep Learning and Computer Vision
 ---
 
 Github Link to the project - [Link](https://github.com/hitesh-vs/StructurefromMotion)
