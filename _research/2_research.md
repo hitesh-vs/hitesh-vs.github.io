@@ -26,7 +26,7 @@ This research addresses the challenge of generating optimal control trajectories
 Simulation Setup
 ======
 [Gazebo_Test]({{ 'assets/img/2d present beer.mp4' | relative_url }})
-[xarm7_Test]({{ 'assets/img/xarm linear.mp4' | relative_url }})
+[xarm7_Test]({{ 'assets/img/xarm Linear.mp4' | relative_url }})
 
 The trajectories generated were verified through the physics simulator Gazebo to verify and correct the parameters in the problem setup. Initial simulation of the beer can on the flat plate end effector was done to estime the physical parameters like the friction coefficient between the object and the plate. The simulation showed that the trajectory adhered to the balancing constraints and the friction was estimated accurately.
 
