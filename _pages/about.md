@@ -6,7 +6,7 @@ subtitle: Robotics Graduate Student @ WPI<br>Worcester, Massachusetts<br><a href
 
 profile:
   align: right
-  image: profile2.png
+  image: profile2.jpg
   image_circular: true
   more_info:
 
