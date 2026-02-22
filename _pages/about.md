@@ -6,32 +6,80 @@ subtitle: Robotics Graduate Student @ WPI<br>Worcester, Massachusetts
 
 profile:
   align: right
-  image: main_pic.png #Profile Pic
-  image_circular: true # crops the image to make it circular
-  more_info: 
+  image: main_pic.png
+  image_circular: true
+  more_info:
 
-news: false # includes a list of news items
-selected_papers: false # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+news: false
+selected_papers: false
+social: true
 ---
 
-<!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+## Hi, I’m Hitesh.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+I work at the intersection of **Computer Vision** and **Embodied AI**, with a focus on building perception systems that enable robots to operate reliably in complex, real-world environments.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them. -->
+---
 
-Hello There! I am Hitesh, currently a first year graduate student studying **MS in Robotics Engineering** at the [Worcester Polytechnic Institute](https://www.wpi.edu/). 
+## Areas of Interest
 
-🤖Robots are interesting, aren't they? I’m truly fascinated by how even the simplest tasks of perception and control in robots stem from incredible engineering innovations and they are only getting better! I’m eager to delve deeper into these captivating fields for multiple real-world applications.
+<div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
 
-Specifically, my research interests lie in the intersection of **Robot Control**, **Artificial Intelligence** and **Robot Perception** and their applications in Robot Locomotion and other systems such as Robot Manipulators and Humanoids. One cool application of Robot Control is **Trajectory Optimisation** and my work as a Research Intern on this topic can be found [here](https://hitesh-vs.github.io/research/).
+  <div style="flex: 1 1 250px; background-color: #e3f2fd; padding: 20px; border-radius: 12px;">
+    <h4 style="margin-top: 0;">Computer Vision</h4>
+    <p style="margin-bottom: 0;">
+      Multi-view geometry, visual perception, state estimation, and learning-based scene understanding for robotics applications.
+    </p>
+  </div>
 
-These are a few other [Projects](https://hitesh-vs.github.io/projects/) from different fields of robotics that I have worked on.
+  <div style="flex: 1 1 250px; background-color: #e8f5e9; padding: 20px; border-radius: 12px;">
+    <h4 style="margin-top: 0;">Embodied AI</h4>
+    <p style="margin-bottom: 0;">
+      Learning-based control, perception-action loops, and generalizable policies for embodied agents.
+    </p>
+  </div>
 
-I received my **Bachelors in Mechanical Engineering** from [Birla Institute of Technology and Science Pilani - Hyderabad (BITS Hyderabad), India](https://www.bits-pilani.ac.in/hyderabad/) in July 2024.  
+  <div style="flex: 1 1 250px; background-color: #f3e5f5; padding: 20px; border-radius: 12px;">
+    <h4 style="margin-top: 0;">Robot Learning</h4>
+    <p style="margin-bottom: 0;">
+      Reinforcement learning, trajectory optimization, and adaptive systems for locomotion and manipulation.
+    </p>
+  </div>
 
-Apart from robots, I'm also a fan of Cricket, Football, Minecraft and Star Wars!
+</div>
 
-You can connect with me on my [Linkedin](https://www.linkedin.com/in/sai-hitesh-viswasam-06b736204/) or through my [email](mailto:sviswasam@wpi.edu).
+---
 
+## Experience
+
+<div style="border-left: 3px solid #999; padding-left: 20px; margin-top: 20px;">
+
+  <div style="margin-bottom: 25px;">
+    <h4 style="margin-bottom: 5px;">MS in Robotics Engineering</h4>
+    <p style="margin: 0;"><strong>Worcester Polytechnic Institute</strong></p>
+    <p style="margin: 0; color: gray;">2024 – Present</p>
+  </div>
+
+  <div style="margin-bottom: 25px;">
+    <h4 style="margin-bottom: 5px;">Research Intern – Trajectory Optimization</h4>
+    <p style="margin: 0;">Robotics Research</p>
+    <p style="margin: 0; color: gray;">2023 – 2024</p>
+  </div>
+
+  <div>
+    <h4 style="margin-bottom: 5px;">B.E. Mechanical Engineering</h4>
+    <p style="margin: 0;"><strong>Birla Institute of Technology and Science Pilani - Hyderabad</strong></p>
+    <p style="margin: 0; color: gray;">2020 – 2024</p>
+  </div>
+
+</div>
+
+---
+
+## Beyond Research
+
+Cricket • Football • Chess • Minecraft • Star Wars
+
+---
+
+You can connect with me on [LinkedIn](https://www.linkedin.com/in/sai-hitesh-viswasam-06b736204/) or via [email](mailto:sviswasam@wpi.edu).
