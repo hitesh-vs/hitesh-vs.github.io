@@ -421,9 +421,9 @@ ninja.data = [{
           description: "A short implementation of EKF SLAM for a robot to navigate in a maze like environment",
           section: "Projects",handler: () => {
               window.location.href = "/projects/7_project/";
-            },},{id: "research-dynamic-whole-body-push-recovery-of-humanoid-robots-while-walking",
-          title: 'Dynamic Whole Body Push Recovery of Humanoid Robots while Walking',
-          description: "Developing Strategies for Humanoid Robots to recover from push distrubances during walking phase while stepping, along with posture regulation.",
+            },},{id: "research-graph-based-morphology-encoding-for-robust-generalisation-of-rl-policies",
+          title: 'Graph Based Morphology Encoding for Robust Generalisation of RL Policies',
+          description: "RL policies need to be re-trained and fine tuned everytime when being tested on a new design. This research focusses on encoding methods to assist in application of generalised policies over a new real world robot design in simulation",
           section: "Research",handler: () => {
               window.location.href = "/research/1_research/";
             },},{id: "research-trajectory-optimisation-for-non-prehensile-manipulation",
