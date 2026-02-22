@@ -2,11 +2,11 @@
 layout: about
 title: About
 permalink: /
-subtitle: Robotics Graduate Student @ WPI<br>Worcester, Massachusetts<a href="mailto:vshitesh17@gmail.com">Get in touch</a>
+subtitle: Robotics Graduate Student @ WPI<br>Worcester, Massachusetts<br><a href="mailto:vshitesh17@gmail.com">Get in touch</a>
 
 profile:
   align: right
-  image: main_pic.png
+  image: profile2.png
   image_circular: true
   more_info:
 
@@ -23,7 +23,6 @@ Over time, through the advent of AI in the real world, I've realised that Roboti
 
 I’m particularly interested in tackling the early, difficult problems in **Physical AI**...the kind that shape how these systems will scale and become an actual tangible thing in the real-world!
 
----
 
 ## Areas of Interest
 
@@ -81,7 +80,7 @@ I’m particularly interested in tackling the early, difficult problems in **Phy
 
 ## Education
 
-<div style="display: flex; flex-direction: row; gap: 25px; margin-top: 25px;">
+<div style="display: flex; flex-direction: column; gap: 25px; margin-top: 25px;">
 
   <!-- WPI -->
   <div style="display: flex; align-items: center; gap: 20px;">
