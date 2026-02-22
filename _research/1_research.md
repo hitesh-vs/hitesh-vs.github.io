@@ -1,8 +1,9 @@
 ---
 layout: page
-title: Dynamic Whole Body Push Recovery of Humanoid Robots while Walking
-description: Developing Strategies for Humanoid Robots to recover from push distrubances during walking phase while stepping, along with posture regulation.
-img: assets/img/push.png
+title: Graph Based Morphology Encoding for Robust Generalisation of RL Policies
+description: RL policies need to be re-trained and fine tuned everytime when being tested on a new design. This research focusses on encoding methods to assist in application of generalised policies over a new real world robot design in simulation
+
+img: assets/img/rl_research.png
 importance: 2
 category: Deep Learning and Computer Vision
 #related_publications: true
@@ -10,23 +11,14 @@ category: Deep Learning and Computer Vision
 
 ## Research Problem
 
-This research tackles an important problem for humanoid robots: how to keep walking when someone pushes them. Much like how humans can recover from unexpected bumps without falling over, we want robots to do the same.
+TThis research addresses the generalization of reinforcement learning (RL) policies across different robot morphologies, with the goal of reducing retraining when robot designs change.
 
-When you're walking and someone pushes you, you instinctively adjust your steps and body posture to stay balanced. Our research gives robots the same ability by teaching them to:
+• Problem: Existing RL policies must be retrained for new robot designs, limiting scalability and real-world deployment.
 
-Detect when they've been pushed
+• Current Limitation: Transformer-based approaches such as MetaMorph enable cross-morphology training but do not explicitly encode structural connectivity, leading to weak transfer on complex, heterogeneous robots like the Unitree G1.
 
-Decide how to respond based on the push strength and direction
+• Research Gap: Morphological encodings insufficiently capture graph-level relationships between links and joints, especially in underactuated or non-uniform real-world robots.
 
-Adjust their walking pattern to stay upright
+• Proposed Approach: Model robot URDFs as graphs and integrate graph-based encodings (GNN/GAT/GCNT) into Transformer actor–critic architectures trained with PPO.
 
-Continue walking after recovering from the push
-
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/push.png" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-
-This is an ongoing work, but the idea is to use a High-Level MPC with footstep planner to detect and plan for the recovery steps after detecting a push while regulating posture.
-   
+• Objective: Improve structural awareness and inter-module communication to enable strong zero-shot generalization to unseen robot designs in simulation.
