@@ -91,11 +91,11 @@ I’m particularly interested in tackling the early, difficult problems in **Phy
     <div>
       <h4 style="margin: 0;">
           MS in Robotics Engineering
-        </a>
       </h4>
       <p style="margin: 3px 0; color: gray;">
       <a href="https://www.wpi.edu/" target="_blank">
         Worcester Polytechnic Institute · 2024 – Present
+      </a>
       </p>
     </div>
 
@@ -110,11 +110,11 @@ I’m particularly interested in tackling the early, difficult problems in **Phy
     <div>
       <h4 style="margin: 0;">
           B.E. Mechanical Engineering
-        </a>
       </h4>
       <p style="margin: 3px 0; color: gray;">
       <a href="https://www.bits-pilani.ac.in/hyderabad/" target="_blank">
         BITS Pilani – Hyderabad · 2020 – 2024
+      </a>
       </p>
     </div>
 
