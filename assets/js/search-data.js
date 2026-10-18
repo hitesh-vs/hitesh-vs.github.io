@@ -423,7 +423,7 @@ ninja.data = [{
               window.location.href = "/projects/7_project/";
             },},{id: "research-graph-based-morphology-encoding-for-robust-generalisation-of-rl-policies",
           title: 'Graph Based Morphology Encoding for Robust Generalisation of RL Policies',
-          description: "RL policies need to be re-trained and fine tuned everytime when being tested on a new design. This research focusses on encoding methods to assist in application of generalised policies over a new real world robot design in simulation",
+          description: "FiLM-Aided Graph Transformers (FAGT) — a single humanoid locomotion policy that conditions on the robot&#39;s own URDF, so it keeps walking when link masses, actuator limits, damping or limb proportions change. MS Thesis, WPI 2026.",
           section: "Research",handler: () => {
               window.location.href = "/research/1_research/";
             },},{id: "research-trajectory-optimisation-for-non-prehensile-manipulation",
